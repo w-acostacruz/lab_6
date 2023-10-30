@@ -1,3 +1,4 @@
+# Encoder & Main Function by Willian Acosta Cruz
 class InvalidLengthError(Exception):
     def __init__(self):
         self.add_note("Length of password must be eight characters!")

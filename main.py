@@ -26,8 +26,17 @@ def encoder(password):
     return p
 
 def decoder(enc_pass):
-    pass
-
+    enc_pass = list(enc_pass)
+    output = ""
+    for i in enc_pass:
+        i = int(i)
+        if i < 3:
+            i = i + 7
+        else:
+            i = i - 3
+        i = str(i)
+        output += i
+    return output
 t = -1
 
 while t != 3:
@@ -42,6 +51,7 @@ while t != 3:
             continue
         print('Your password has been encoded and stored! \n \n')
    if user_input == '2':
+       encoded_pass = encoder(p_f_e)
        print(f'The encoded password is {encoded_pass}, and the original password is {decoder(encoded_pass)}. \n \n')
    if user_input == '3':
        t = 3
